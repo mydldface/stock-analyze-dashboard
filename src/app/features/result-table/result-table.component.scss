@@ -1,0 +1,40 @@
+table {
+  width: 100%;
+}
+
+thead {
+  background: #f8fafc;
+}
+
+thead th {
+  padding: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+tbody td {
+  padding: 14px;
+}
+
+tbody tr {
+  transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+.buy {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.sell {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.watch {
+  color: #d97706;
+  font-weight: 700;
+}

@@ -1,0 +1,22 @@
+<div class="container">
+
+  <h1 class="mb-4">
+    Stock Analyze Dashboard
+  </h1>
+  <app-upload
+    (uploaded)="uploadFinished($event)">
+  </app-upload>
+  <app-stock-selector
+    [stocks]="results"
+    (selected)="stockSelected($event)">
+  </app-stock-selector>
+  <app-signal-panel
+    [stock]="selectedStock">
+  </app-signal-panel>
+  <app-chart
+    [stock]="selectedStock">
+  </app-chart>
+  <app-result-table
+    [results]="results">
+  </app-result-table>
+</div>

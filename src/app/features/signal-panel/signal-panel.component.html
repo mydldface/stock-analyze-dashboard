@@ -1,0 +1,22 @@
+<div class="card mt-3">
+  <div class="card-header">
+    Aktuelles Signal
+  </div>
+  <div class="card-body">
+    @if (stock) {
+      <h3>
+        {{ stock.symbol }}
+      </h3>
+      <p>
+        {{ stock.pattern }}
+      </p>
+      <p>
+        {{ stock.signal }}
+      </p>
+    } @else {
+      <p>
+        Keine Aktie ausgewählt
+      </p>
+    }
+  </div>
+</div>

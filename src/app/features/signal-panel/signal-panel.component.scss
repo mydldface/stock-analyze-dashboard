@@ -1,0 +1,46 @@
+.signal-card {
+  text-align: center;
+}
+
+.symbol {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111827;
+}
+
+.pattern {
+  margin-top: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.pattern.bullish {
+  color: #16a34a;
+}
+
+.pattern.bearish {
+  color: #dc2626;
+}
+
+.signal-badge {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 700;
+}
+
+.signal-buy {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.signal-sell {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.signal-watch {
+  background: #fef3c7;
+  color: #92400e;
+}

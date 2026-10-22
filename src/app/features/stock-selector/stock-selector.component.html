@@ -1,0 +1,17 @@
+<div class="card mt-3">
+  <div class="card-header">
+    Aktie auswählen
+  </div>
+  <div class="card-body">
+    <select
+      class="form-select"
+      (change)="change($any($event.target).value)">
+      @for (stock of stocks; track stock.symbol) {
+        <option
+          [value]="stock.symbol">
+          {{ stock.symbol }}
+        </option>
+      }
+    </select>
+  </div>
+</div>
