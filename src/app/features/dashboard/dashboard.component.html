@@ -7,6 +7,13 @@
       (uploaded)="uploadFinished($event)">
     </app-upload>
   </section>
+
+  <section class="manual-analysis-section">
+    <app-manual-analysis
+      (analyzed)="manualAnalysisFinished($event)">
+    </app-manual-analysis>
+  </section>
+
   <section class="dashboard-section">
     <app-stock-selector
       [stocks]="results"

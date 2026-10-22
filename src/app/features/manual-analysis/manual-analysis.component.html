@@ -1,0 +1,115 @@
+<div class="card manual-analysis-card">
+
+  <div class="card-header">
+    Manuelle Analyse
+  </div>
+  <div class="card-body">
+    <div class="form-section">
+      <!-- Allgemeine Daten -->
+      <div class="top-row">
+        <div class="field">
+          <label>Symbol</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="model.symbol">
+        </div>
+        <div class="field">
+          <label>Current Price</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="model.currentPrice">
+        </div>
+        <div class="field">
+          <label>Volume</label>
+
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="model.volume">
+        </div>
+      </div>
+
+      <!-- Vorperiode -->
+      <div class="candle-box">
+        <h5>Vorperiode</h5>
+        <div class="ohlc-grid">
+          <div class="field">
+            <label>Open</label>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="model.prevOpen">
+          </div>
+          <div class="field">
+            <label>High</label>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="model.prevHigh">
+          </div>
+          <div class="field">
+            <label>Low</label>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="model.prevLow">
+          </div>
+
+          <div class="field">
+            <label>Close</label>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="model.prevClose">
+          </div>
+        </div>
+
+      </div>
+      <!-- Aktuelle Periode -->
+      <div class="candle-box">
+        <h5>Aktuelle Periode</h5>
+        <div class="ohlc-grid">
+          <div class="field">
+            <label>Open</label>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="model.open">
+          </div>
+          <div class="field">
+            <label>High</label>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="model.high">
+          </div>
+          <div class="field">
+            <label>Low</label>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="model.low">
+          </div>
+          <div class="field">
+            <label>Close</label>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="model.close">
+          </div>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="action-bar">
+        <button
+          class="btn-analyze"
+          (click)="analyze()">
+          Analyse starten
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

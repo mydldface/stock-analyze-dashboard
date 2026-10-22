@@ -19,12 +19,16 @@ import { ChartComponent }
 import { ResultTableComponent }
   from '../result-table/result-table.component';
 
+import { ManualAnalysisComponent }
+  from '../manual-analysis/manual-analysis.component';
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
     CommonModule,
     UploadComponent,
+    ManualAnalysisComponent,
     StockSelectorComponent,
     SignalPanelComponent,
     ChartComponent,
@@ -58,5 +62,13 @@ export class DashboardComponent {
 
     this.selectedStock =
       stock;
+  }
+
+  manualAnalysisFinished(
+    result: AnalysisResult
+  ): void {
+    this.results = [result];
+    this.selectedStock =
+      result;
   }
 }
