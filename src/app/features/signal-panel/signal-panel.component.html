@@ -1,18 +1,26 @@
 <div class="card mt-3">
+
   <div class="card-header">
     Aktuelles Signal
   </div>
-  <div class="card-body">
+  <div class="card-body signal-card">
     @if (stock) {
-      <h3>
+      <div class="symbol">
         {{ stock.symbol }}
-      </h3>
-      <p>
+      </div>
+      <div
+        class="pattern"
+        [class.bullish]="stock.pattern.includes('BULL')"
+        [class.bearish]="stock.pattern.includes('BEAR')">
         {{ stock.pattern }}
-      </p>
-      <p>
+      </div>
+      <div
+        class="signal-badge"
+        [class.signal-buy]="stock.signal.includes('BUY')"
+        [class.signal-sell]="stock.signal.includes('SELL')"
+        [class.signal-watch]="stock.signal.includes('WATCH')">
         {{ stock.signal }}
-      </p>
+      </div>
     } @else {
       <p>
         Keine Aktie ausgewählt

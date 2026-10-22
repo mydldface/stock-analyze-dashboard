@@ -19,7 +19,8 @@ import { AnalysisResult }
 @Component({
   selector: 'app-chart',
   standalone: true,
-  templateUrl: './chart.component.html'
+  templateUrl: './chart.component.html',
+  styleUrls: ['./chart.component.scss']
 })
 export class ChartComponent
   implements AfterViewInit, OnChanges {

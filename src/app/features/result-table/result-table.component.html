@@ -1,14 +1,16 @@
-<div class="card mt-3">
+<div class="card results-card">
   <div class="card-header">
-    Analyseergebnisse
+    <span class="table-title">
+      Analyseergebnisse
+    </span>
   </div>
   <div class="card-body">
     @if (results.length === 0) {
-      <p>
+      <div class="empty-state">
         Keine Ergebnisse vorhanden
-      </p>
+      </div>
     } @else {
-      <table class="table">
+      <table class="result-table">
         <thead>
         <tr>
           <th>Symbol</th>
@@ -19,9 +21,27 @@
         <tbody>
           @for (row of results; track row.symbol) {
             <tr>
-              <td>{{ row.symbol }}</td>
-              <td>{{ row.pattern }}</td>
-              <td>{{ row.signal }}</td>
+              <td class="symbol">
+                {{ row.symbol }}
+              </td>
+              <td>
+                {{ row.pattern }}
+              </td>
+              <td>
+                @if (row.signal.includes('BUY')) {
+                  <span class="signal-badge buy">
+                    {{ row.signal }}
+                  </span>
+                } @else if (row.signal.includes('SELL')) {
+                  <span class="signal-badge sell">
+                    {{ row.signal }}
+                  </span>
+                } @else {
+                  <span class="signal-badge watch">
+                    {{ row.signal }}
+                  </span>
+                }
+              </td>
             </tr>
           }
         </tbody>

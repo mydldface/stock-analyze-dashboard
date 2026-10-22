@@ -1,40 +1,82 @@
-table {
-  width: 100%;
+.results-card {
+  margin-top: 1.5rem;
 }
 
-thead {
+.table-title {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.result-table th {
+  text-align: left;
+  padding: 14px 16px;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.result-table td {
+  padding: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.result-table tbody tr {
+  transition: all .2s ease;
+}
+
+.result-table tbody tr:hover {
   background: #f8fafc;
 }
 
-thead th {
-  padding: 14px;
-  font-weight: 600;
-  color: #374151;
+.symbol {
+  font-weight: 700;
+  color: #0f172a;
 }
 
-tbody td {
-  padding: 14px;
-}
-
-tbody tr {
-  transition: background-color 0.2s;
-}
-
-tbody tr:hover {
-  background: #f9fafb;
+.signal-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
 .buy {
-  color: #16a34a;
-  font-weight: 700;
+  background: #dcfce7;
+  color: #15803d;
 }
 
 .sell {
-  color: #dc2626;
-  font-weight: 700;
+  background: #fee2e2;
+  color: #b91c1c;
 }
 
 .watch {
-  color: #d97706;
-  font-weight: 700;
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.empty-state {
+  text-align: center;
+  color: #64748b;
+  padding: 20px;
+}
+
+.result-table tbody tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+.result-table tbody tr:nth-child(even) {
+  background: #f1f5f9;
+}
+
+.result-table tbody tr:hover {
+  background: #dbeafe;
 }

@@ -1,5 +1,7 @@
 :host {
   display: block;
+  min-height: 100vh;
+  background: #f3f4f6;
 }
 
 .container {
@@ -15,13 +17,16 @@ h1 {
   margin-bottom: 2rem;
 }
 
+.dashboard-section {
+  margin-bottom: 24px;
+}
+
 .card {
   border: none;
   border-radius: 16px;
   background: #ffffff;
   box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.08);
-  margin-bottom: 1.5rem;
 }
 
 .card-header {
@@ -33,8 +38,4 @@ h1 {
 
 .card-body {
   padding: 1.25rem;
-}
-
-body {
-  background: #f3f4f6;
 }

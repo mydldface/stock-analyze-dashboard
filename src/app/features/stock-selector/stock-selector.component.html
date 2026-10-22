@@ -1,17 +1,36 @@
-<div class="card mt-3">
+<div class="card stock-selector-card">
   <div class="card-header">
-    Aktie auswählen
+    <span class="selector-title">
+      Aktie auswählen
+    </span>
   </div>
+
   <div class="card-body">
     <select
-      class="form-select"
+      class="form-select stock-select"
       (change)="change($any($event.target).value)">
-      @for (stock of stocks; track stock.symbol) {
-        <option
-          [value]="stock.symbol">
-          {{ stock.symbol }}
+
+      @if (stocks.length === 0) {
+        <option value="">
+          Keine Daten geladen
         </option>
+      } @else {
+        <option value="">
+          Bitte auswählen...
+        </option>
+
+        @for (stock of stocks; track stock.symbol) {
+          <option
+            [value]="stock.symbol">
+            {{ stock.symbol }}
+          </option>
+        }
       }
     </select>
+    @if (stocks.length > 0) {
+      <div class="stock-count">
+        {{ stocks.length }} Aktie(n) verfügbar
+      </div>
+    }
   </div>
 </div>

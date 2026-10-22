@@ -30,9 +30,7 @@ import { ResultTableComponent }
     ChartComponent,
     ResultTableComponent
   ],
-
   templateUrl: './dashboard.component.html',
-
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {

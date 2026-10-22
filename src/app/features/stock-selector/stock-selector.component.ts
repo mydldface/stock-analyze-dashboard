@@ -11,7 +11,8 @@ import { AnalysisResult }
 @Component({
   selector: 'app-stock-selector',
   standalone: true,
-  templateUrl: './stock-selector.component.html'
+  templateUrl: './stock-selector.component.html',
+  styleUrls: ['./stock-selector.component.scss']
 })
 export class StockSelectorComponent {
   @Input()

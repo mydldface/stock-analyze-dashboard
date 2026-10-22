@@ -9,7 +9,8 @@ import { AnalysisResult }
   selector: 'app-upload',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './upload.component.html'
+  templateUrl: './upload.component.html',
+  styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent {
   @Output()
