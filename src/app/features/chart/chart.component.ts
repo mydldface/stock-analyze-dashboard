@@ -16,9 +16,16 @@ import {
 import { AnalysisResult }
   from '../../shared/models/analysis-result';
 
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+
 @Component({
   selector: 'app-chart',
   standalone: true,
+  imports: [
+    CommonModule,
+    MatCardModule
+  ],
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })
@@ -58,11 +65,24 @@ export class ChartComponent
   }
 
   private renderChart(): void {
+    if (!this.initialized) {
+      return;
+    }
 
-    if (
-      !this.initialized ||
-      !this.stock
-    ) {
+    if (!this.stock) {
+
+      this.chart.remove();
+
+      this.chart =
+        createChart(
+          this.container.nativeElement,
+          {
+            width:
+            this.container.nativeElement.clientWidth,
+            height: 500
+          }
+        );
+
       return;
     }
 
@@ -72,7 +92,8 @@ export class ChartComponent
       createChart(
         this.container.nativeElement,
         {
-          width: this.container.nativeElement.clientWidth,
+          width:
+          this.container.nativeElement.clientWidth,
           height: 500,
 
           timeScale: {
@@ -81,6 +102,7 @@ export class ChartComponent
           }
         }
       );
+
     const candleSeries =
       this.chart.addSeries(
         CandlestickSeries
@@ -102,10 +124,5 @@ export class ChartComponent
         close: this.stock.close
       }
     ]);
-
-    this.chart.timeScale().setVisibleLogicalRange({
-      from: -3,
-      to: 5
-    });
   }
 }

@@ -1,38 +1,78 @@
-<div class="container">
-  <h1>
+<div class="dashboard-container">
+  <h1 class="dashboard-title">
     Stock Analyze Dashboard
   </h1>
-  <section class="dashboard-section">
+
+  <!-- Upload/Reset -->
+  <mat-card class="dashboard-card">
     <app-upload
-      (uploaded)="uploadFinished($event)">
+      (uploaded)="uploadFinished($event)"
+      (cleared)="resetDashboard()">
     </app-upload>
-  </section>
+  </mat-card>
 
-  <section class="manual-analysis-section">
-    <app-manual-analysis
-      (analyzed)="manualAnalysisFinished($event)">
-    </app-manual-analysis>
-  </section>
+  <!-- Manuelle Analyse -->
+  <mat-card class="dashboard-card">
+    <mat-card-content>
+      <app-manual-analysis
+        (analyzed)="manualAnalysisFinished($event)">
+      </app-manual-analysis>
+    </mat-card-content>
+  </mat-card>
 
-  <section class="dashboard-section">
-    <app-stock-selector
-      [stocks]="results"
-      (selected)="stockSelected($event)">
-    </app-stock-selector>
-  </section>
-  <section class="dashboard-section">
-    <app-signal-panel
-      [stock]="selectedStock">
-    </app-signal-panel>
-  </section>
-  <section class="dashboard-section">
-    <app-chart
-      [stock]="selectedStock">
-    </app-chart>
-  </section>
-  <section class="dashboard-section">
-    <app-result-table
-      [results]="results">
-    </app-result-table>
-  </section>
+  <!-- Aktienauswahl -->
+  <mat-card class="dashboard-card">
+    <mat-card-header>
+      <mat-card-title>
+        Aktie auswählen
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-stock-selector
+        [stocks]="results"
+        (selected)="stockSelected($event)">
+      </app-stock-selector>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Signal -->
+  <mat-card class="dashboard-card">
+    <mat-card-header>
+      <mat-card-title>
+        Aktuelles Signal
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-signal-panel
+        [stock]="selectedStock">
+      </app-signal-panel>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Chart -->
+  <mat-card class="dashboard-card chart-card">
+    <mat-card-header>
+      <mat-card-title>
+        Candlestick Chart
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-chart
+        [stock]="selectedStock">
+      </app-chart>
+    </mat-card-content>
+  </mat-card>
+  <!-- Ergebnisse -->
+  <mat-card class="dashboard-card">
+    <mat-card-header>
+      <mat-card-title>
+        Analyseergebnisse
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-result-table
+        [results]="results">
+      </app-result-table>
+    </mat-card-content>
+  </mat-card>
 </div>

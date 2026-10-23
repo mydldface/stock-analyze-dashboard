@@ -9,7 +9,6 @@
     <select
       class="form-select stock-select"
       (change)="change($any($event.target).value)">
-
       @if (stocks.length === 0) {
         <option value="">
           Keine Daten geladen

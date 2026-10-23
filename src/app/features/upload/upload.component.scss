@@ -1,60 +1,47 @@
 .upload-card {
-  border: none;
-  border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+  margin-bottom: 1rem;
 }
 
-.card-header {
-  background: white;
-  font-weight: 600;
-  font-size: 1.05rem;
-}
-
-.upload-zone {
-
-  display: block;
-  cursor: pointer;
-  padding: 32px;
+.drop-zone {
   border: 2px dashed #cbd5e1;
   border-radius: 12px;
-  text-align: center;
-  transition: all .2s;
-}
 
-.upload-zone:hover {
-  border-color: #2563eb;
-  background: #f8fbff;
+  padding: 2rem;
+
+  text-align: center;
+
+  background: #fafafa;
 }
 
 .upload-icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+
+  color: #f59e0b;
+
+  margin-bottom: 1rem;
 }
 
-.upload-text strong {
-  display: block;
-  font-size: 1rem;
-  color: #1f2937;
-}
+.selected-file {
+  margin-top: 1rem;
 
-.upload-text small {
-  color: #64748b;
+  color: #0f766e;
+
+  font-weight: 600;
 }
 
 .button-bar {
-  margin-top: 20px;
   display: flex;
-  gap: 10px;
+  gap: 12px;
+
+  margin-top: 1rem;
 }
 
-.btn-primary {
-  background: #2563eb;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 24px;
+.button-bar button:first-child {
+  background: #0f766e;
 }
 
-.btn-light {
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
+.button-bar button:first-child:hover {
+  background: #115e59;
 }

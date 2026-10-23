@@ -1,48 +1,50 @@
-<div class="card upload-card">
-
-  <div class="card-header">
-    📊 Excel Upload
-  </div>
-  <div class="card-body">
-    <label class="upload-zone">
+<mat-card class="upload-card">
+  <mat-card-header>
+    <mat-card-title>
+      📊 Excel Upload
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="drop-zone">
+      <mat-icon class="upload-icon">
+        folder_open
+      </mat-icon>
+      <h3>
+        Excel-Datei auswählen
+      </h3>
+      <p>
+        Unterstützte Formate: .xls, .xlsx
+      </p>
       <input
+        #fileInput
         type="file"
-        accept=".xlsx,.xls"
-        (change)="onFileSelected($event)"
-        hidden>
-      <div class="upload-text">
-        <div class="upload-icon">
-          📁
+        accept=".xls,.xlsx"
+        hidden
+        (change)="onFileSelected($event)">
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="fileInput.click()">
+        Datei auswählen
+      </button>
+      @if (selectedFile) {
+        <div class="selected-file">
+          {{ selectedFile.name }}
         </div>
-        <div>
-          @if (selectedFile) {
-            <strong>
-              {{ selectedFile.name }}
-            </strong>
-          } @else {
-            <strong>
-              Excel-Datei auswählen
-            </strong>
-          }
-        </div>
-        <small>
-          Unterstützte Formate: .xls, .xlsx
-        </small>
-      </div>
-    </label>
+      }
+    </div>
     <div class="button-bar">
       <button
-        type="button"
-        class="btn btn-primary"
+        mat-raised-button
+        color="primary"
         (click)="upload()">
         Analysieren
       </button>
       <button
-        type="button"
-        class="btn btn-light"
+        mat-stroked-button
         (click)="reset()">
         Zurücksetzen
       </button>
     </div>
-  </div>
-</div>
+  </mat-card-content>
+</mat-card>

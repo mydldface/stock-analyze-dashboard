@@ -1,11 +1,11 @@
 <div class="card manual-analysis-card">
-
   <div class="card-header">
     Manuelle Analyse
   </div>
+
   <div class="card-body">
     <div class="form-section">
-      <!-- Allgemeine Daten -->
+      <!-- Stammdaten -->
       <div class="top-row">
         <div class="field">
           <label>Symbol</label>
@@ -21,9 +21,9 @@
             class="form-control"
             [(ngModel)]="model.currentPrice">
         </div>
+
         <div class="field">
           <label>Volume</label>
-
           <input
             type="number"
             class="form-control"
@@ -32,6 +32,7 @@
       </div>
 
       <!-- Vorperiode -->
+
       <div class="candle-box">
         <h5>Vorperiode</h5>
         <div class="ohlc-grid">
@@ -42,6 +43,7 @@
               class="form-control"
               [(ngModel)]="model.prevOpen">
           </div>
+
           <div class="field">
             <label>High</label>
             <input
@@ -49,6 +51,7 @@
               class="form-control"
               [(ngModel)]="model.prevHigh">
           </div>
+
           <div class="field">
             <label>Low</label>
             <input
@@ -65,7 +68,6 @@
               [(ngModel)]="model.prevClose">
           </div>
         </div>
-
       </div>
       <!-- Aktuelle Periode -->
       <div class="candle-box">
@@ -78,6 +80,7 @@
               class="form-control"
               [(ngModel)]="model.open">
           </div>
+
           <div class="field">
             <label>High</label>
             <input
@@ -85,6 +88,7 @@
               class="form-control"
               [(ngModel)]="model.high">
           </div>
+
           <div class="field">
             <label>Low</label>
             <input
@@ -101,8 +105,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Button -->
       <div class="action-bar">
         <button
           class="btn-analyze"

@@ -80,3 +80,37 @@
 .result-table tbody tr:hover {
   background: #dbeafe;
 }
+
+.results-card {
+  margin-top: 1rem;
+}
+
+.results-table {
+  width: 100%;
+}
+
+.symbol {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.buy-chip {
+  background: #dcfce7 !important;
+  color: #166534 !important;
+}
+
+.sell-chip {
+  background: #fee2e2 !important;
+  color: #991b1b !important;
+}
+
+.watch-chip {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+}

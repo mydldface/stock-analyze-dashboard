@@ -22,6 +22,8 @@ import { ResultTableComponent }
 import { ManualAnalysisComponent }
   from '../manual-analysis/manual-analysis.component';
 
+import { MatCardModule } from '@angular/material/card';
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -32,7 +34,8 @@ import { ManualAnalysisComponent }
     StockSelectorComponent,
     SignalPanelComponent,
     ChartComponent,
-    ResultTableComponent
+    ResultTableComponent,
+    MatCardModule,
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
@@ -70,5 +73,10 @@ export class DashboardComponent {
     this.results = [result];
     this.selectedStock =
       result;
+  }
+
+  resetDashboard(): void {
+    this.results = [];
+    this.selectedStock = undefined as any;
   }
 }

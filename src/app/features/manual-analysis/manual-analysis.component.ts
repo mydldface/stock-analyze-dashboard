@@ -16,12 +16,21 @@ import { StockService }
   from '../../core/stock.service';
 import {CommonModule} from '@angular/common';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
 @Component({
   selector: 'app-manual-analysis',
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   templateUrl: './manual-analysis.component.html',
   styleUrls: ['./manual-analysis.component.scss']

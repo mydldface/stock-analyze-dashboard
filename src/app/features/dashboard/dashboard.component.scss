@@ -39,3 +39,30 @@ h1 {
 .card-body {
   padding: 1.25rem;
 }
+
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.dashboard-card {
+  margin-bottom: 16px;
+  border-radius: 12px;
+}
+
+.chart-card {
+  min-height: 600px;
+}
+
+mat-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}

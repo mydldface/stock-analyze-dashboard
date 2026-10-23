@@ -1,6 +1,6 @@
 .manual-analysis-card {
   margin-top: 1rem;
-  max-width: 900px;
+  max-width: 920px;
 }
 
 .manual-analysis-card .card-body {
@@ -13,14 +13,24 @@
   gap: 10px;
 }
 
-/* Symbol / Preis / Volumen */
+/* Symbol / Current Price / Volume */
 
 .top-row {
-  display: grid;
-  grid-template-columns: 220px 150px 150px;
+  display: flex;
   gap: 12px;
-  align-items: end;
+  align-items: flex-end;
 }
+
+.top-row .field:nth-child(1) {
+  width: 220px;
+}
+
+.top-row .field:nth-child(2),
+.top-row .field:nth-child(3) {
+  width: 140px;
+}
+
+/* Allgemeine Felder */
 
 .field {
   display: flex;
@@ -34,12 +44,10 @@
   color: #64748b;
 }
 
-/* Inputs deutlich kompakter */
-
 .form-control {
   height: 26px;
   min-height: 26px;
-  padding: 2px 6px;
+  padding: 2px 8px;
   font-size: 0.8rem;
   border: 1px solid #cbd5e1;
   border-radius: 6px;
@@ -54,9 +62,9 @@
 /* OHLC Bereiche */
 
 .candle-sections {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .candle-box {
@@ -65,34 +73,39 @@
   border-left: 4px solid #0f766e;
   border-radius: 8px;
   padding: 8px;
+  width: fit-content;
 }
 
 .candle-box h5 {
   margin: 0 0 6px 0;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #1e293b;
 }
 
-/* Open High Low Close komplett in einer Zeile */
+/* Open High Low Close kompakt */
 
 .ohlc-grid {
-  display: grid;
-  grid-template-columns:
-    100px 100px 100px 100px;
-  gap: 6px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ohlc-grid .field {
+  width: 110px;
 }
 
 /* Button */
+
 .action-bar {
   display: flex;
   justify-content: flex-end;
-  padding-top: 8px;
+  margin-top: 8px;
 }
 
 .btn-analyze {
-  height: 32px;
-  padding: 0 14px;
+  height: 34px;
+  padding: 0 16px;
   background: #0f766e;
   color: white;
   border: none;
@@ -100,18 +113,33 @@
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .btn-analyze:hover {
   background: #115e59;
 }
 
-/* Mobile */
+/* Mobil */
+
 @media (max-width: 900px) {
+
   .top-row {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
   }
+
+  .top-row .field,
+  .ohlc-grid .field {
+    width: 100%;
+  }
+
+  .candle-box {
+    width: 100%;
+  }
+
   .ohlc-grid {
+    display: grid;
     grid-template-columns: 1fr 1fr;
   }
 }
