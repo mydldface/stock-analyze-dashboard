@@ -1,8 +1,10 @@
-<div class="card mt-3">
-  <div class="card-header">
-    Aktuelles Signal
-  </div>
-  <div class="card-body signal-card">
+<mat-card class="signal-card">
+  <mat-card-header>
+    <mat-card-title>
+      Aktuelles Signal
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
     @if (stock) {
       <div class="symbol">
         {{ stock.symbol }}
@@ -13,17 +15,23 @@
         [class.bearish]="stock.pattern.includes('BEAR')">
         {{ stock.pattern }}
       </div>
-      <div
-        class="signal-badge"
-        [class.signal-buy]="stock.signal.includes('BUY')"
-        [class.signal-sell]="stock.signal.includes('SELL')"
-        [class.signal-watch]="stock.signal.includes('WATCH')">
-        {{ stock.signal }}
-      </div>
+      @if (stock.signal.includes('BUY')) {
+        <mat-chip class="buy-chip">
+          {{ stock.signal }}
+        </mat-chip>
+      } @else if (stock.signal.includes('SELL')) {
+        <mat-chip class="sell-chip">
+          {{ stock.signal }}
+        </mat-chip>
+      } @else {
+        <mat-chip class="watch-chip">
+          {{ stock.signal }}
+        </mat-chip>
+      }
     } @else {
-      <p>
+      <div class="empty-state">
         Keine Aktie ausgewählt
-      </p>
+      </div>
     }
-  </div>
-</div>
+  </mat-card-content>
+</mat-card>

@@ -1,5 +1,5 @@
 .stock-selector-card {
-  margin-top: 1rem;
+  margin-top: 16px;
 }
 
 .card-header {
@@ -12,12 +12,33 @@
   color: #1f2937;
 }
 
+.card-body {
+  padding: 8px 12px;
+}
+
+/* Container für das Auswahlfeld */
+
+.stock-select-field {
+  width: fit-content;
+}
+
+/* Auswahlfeld bewusst kompakt halten */
+
 .stock-select {
-  height: 48px;
-  border-radius: 10px;
-  font-size: 1rem;
-  cursor: pointer;
+  width: 180px;
+
+  height: 30px;
+  min-height: 30px;
+
+  padding: 2px 8px;
+
   border: 1px solid #cbd5e1;
+  border-radius: 6px;
+
+  font-size: 0.85rem;
+
+  cursor: pointer;
+
   transition: all 0.2s ease;
 }
 
@@ -27,12 +48,24 @@
 
 .stock-select:focus {
   border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
   outline: none;
 }
 
 .stock-count {
-  margin-top: 10px;
-  font-size: 0.85rem;
+  margin-top: 6px;
+
+  font-size: 0.8rem;
   color: #64748b;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .stock-select {
+    width: 100%;
+    max-width: 220px;
+  }
+
 }

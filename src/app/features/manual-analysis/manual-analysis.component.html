@@ -1,124 +1,115 @@
-<div class="card manual-analysis-card">
-  <div class="card-header">
-    Manuelle Analyse
-  </div>
-
-  <div class="card-body">
-    <div class="form-section">
-      <!-- Stammdaten -->
-      <div class="top-row">
-        <div class="field">
-          <label>Symbol</label>
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="model.symbol">
-        </div>
-        <div class="field">
-          <label>Current Price</label>
-          <input
-            type="number"
-            class="form-control"
-            [(ngModel)]="model.currentPrice">
-        </div>
-
-        <div class="field">
-          <label>Volume</label>
-          <input
-            type="number"
-            class="form-control"
-            [(ngModel)]="model.volume">
-        </div>
-      </div>
-
-      <!-- Vorperiode -->
-
-      <div class="candle-box">
-        <h5>Vorperiode</h5>
-        <div class="ohlc-grid">
-          <div class="field">
-            <label>Open</label>
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="model.prevOpen">
-          </div>
-
-          <div class="field">
-            <label>High</label>
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="model.prevHigh">
-          </div>
-
-          <div class="field">
-            <label>Low</label>
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="model.prevLow">
-          </div>
-
-          <div class="field">
-            <label>Close</label>
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="model.prevClose">
-          </div>
-          <div class="field">
-            <label>Volume</label>
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="model.prevVolume">
-          </div>
-        </div>
-      </div>
-      <!-- Aktuelle Periode -->
-      <div class="candle-box">
-        <h5>Aktuelle Periode</h5>
-        <div class="ohlc-grid">
-          <div class="field">
-            <label>Open</label>
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="model.open">
-          </div>
-
-          <div class="field">
-            <label>High</label>
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="model.high">
-          </div>
-
-          <div class="field">
-            <label>Low</label>
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="model.low">
-          </div>
-          <div class="field">
-            <label>Close</label>
-            <input
-              type="number"
-              class="form-control"
-              [(ngModel)]="model.close">
-          </div>
-        </div>
-      </div>
-      <div class="action-bar">
-        <button
-          class="btn-analyze"
-          (click)="analyze()">
-          Analyse starten
-        </button>
-      </div>
+<mat-card class="manual-analysis-card">
+  <mat-card-header>
+    <mat-card-title>
+      Manuelle Analyse
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- Stammdaten -->
+    <div class="top-row">
+      <mat-form-field
+        appearance="outline"
+        class="field-symbol">
+        <mat-label>Symbol</mat-label>
+        <input
+          matInput
+          [(ngModel)]="model.symbol">
+      </mat-form-field>
+      <mat-form-field
+        appearance="outline"
+        class="field-small">
+        <mat-label>Current Price</mat-label>
+        <input
+          matInput
+          type="number"
+          [(ngModel)]="model.currentPrice">
+      </mat-form-field>
+      <mat-form-field
+        appearance="outline"
+        class="field-volume">
+        <mat-label>Volume</mat-label>
+        <input
+          matInput
+          type="number"
+          [(ngModel)]="model.volume">
+      </mat-form-field>
     </div>
-  </div>
-</div>
+    <!-- Vorperiode -->
+    <mat-card class="candle-box">
+      <mat-card-title>
+        Vorperiode
+      </mat-card-title>
+      <div class="ohlc-grid">
+        <mat-form-field appearance="outline">
+          <mat-label>Open</mat-label>
+          <input matInput type="number"
+                 [(ngModel)]="model.prevOpen">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>High</mat-label>
+          <input matInput type="number"
+                 [(ngModel)]="model.prevHigh">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Low</mat-label>
+          <input matInput type="number"
+                 [(ngModel)]="model.prevLow">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Close</mat-label>
+          <input matInput type="number"
+                 [(ngModel)]="model.prevClose">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Volume</mat-label>
+          <input matInput type="number"
+                 [(ngModel)]="model.prevVolume">
+        </mat-form-field>
+      </div>
+    </mat-card>
+
+    <!-- Aktuelle Periode -->
+
+    <mat-card class="candle-box">
+
+      <mat-card-title>
+        Aktuelle Periode
+      </mat-card-title>
+
+      <div class="ohlc-grid">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Open</mat-label>
+          <input matInput type="number"
+                 [(ngModel)]="model.open">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>High</mat-label>
+          <input matInput type="number"
+                 [(ngModel)]="model.high">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Low</mat-label>
+          <input matInput type="number"
+                 [(ngModel)]="model.low">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Close</mat-label>
+          <input matInput type="number"
+                 [(ngModel)]="model.close">
+        </mat-form-field>
+      </div>
+    </mat-card>
+    <div class="action-bar">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="analyze()">
+        Analyse starten
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
