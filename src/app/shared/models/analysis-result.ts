@@ -3,11 +3,13 @@ export interface AnalysisResult {
   symbol: string;
 
   currentPrice: number;
+  volumeRatio: number;
 
   prevOpen: number;
   prevHigh: number;
   prevLow: number;
   prevClose: number;
+  prevVolume: number;
 
   open: number;
   high: number;

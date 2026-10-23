@@ -1,14 +1,17 @@
-import { Component, Input } from '@angular/core';
 import { AnalysisResult } from '../../shared/models/analysis-result';
 
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { MatTableModule } from '@angular/material/table';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatTableModule } from '@angular/material/table';
+
 
 @Component({
   selector: 'app-result-table',
   standalone: true,
   imports: [
+    CommonModule,
     MatCardModule,
     MatTableModule,
     MatChipsModule
@@ -23,6 +26,9 @@ export class ResultTableComponent {
   displayedColumns = [
     'symbol',
     'pattern',
-    'signal'
+    'signal',
+    'prevVolume',
+    'volume',
+    'volumeRatio'
   ];
 }

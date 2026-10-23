@@ -137,9 +137,16 @@
   .candle-box {
     width: 100%;
   }
-
+  /*
   .ohlc-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+   */
+
+  .ohlc-grid {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
   }
 }

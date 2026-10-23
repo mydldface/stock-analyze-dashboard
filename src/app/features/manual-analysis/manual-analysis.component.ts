@@ -47,6 +47,7 @@ export class ManualAnalysisComponent {
     prevHigh: 0,
     prevLow: 0,
     prevClose: 0,
+    prevVolume: 0,
     open: 0,
     high: 0,
     low: 0,

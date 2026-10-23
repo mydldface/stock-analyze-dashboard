@@ -4,6 +4,7 @@ export interface StockData {
   prevHigh: number;
   prevLow: number;
   prevClose: number;
+  prevVolume: number;
   open: number;
   high: number;
   low: number;
