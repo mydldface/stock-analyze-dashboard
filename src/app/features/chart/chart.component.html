@@ -5,11 +5,19 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <div class="chart-wrapper">
-      <div
-        #chartContainer
-        id="chart">
-      </div>
+    <div class="chart-legend">
+      <span class="legend-item">
+        <span class="dot previous"></span>
+        Linke Kerze = Vortageskerze
+      </span>
+      <span class="legend-item">
+        <span class="dot current"></span>
+        Rechte Kerze = Aktuelle Kerze
+      </span>
+    </div>
+    <div
+      #chartContainer
+      class="chart-container">
     </div>
   </mat-card-content>
 </mat-card>
