@@ -86,11 +86,11 @@ export class ChartComponent
       this.chartContainer.nativeElement,
       {
         width: this.chartContainer.nativeElement.clientWidth,
-        height: 600,
+        height: 280,
         timeScale: {
           borderColor: '#cbd5e1',
-          barSpacing: 30,
-          rightOffset: 0
+          barSpacing: 10,
+          rightOffset: 4
         },
         layout: {
           background: {
@@ -128,6 +128,24 @@ export class ChartComponent
       );
 
     const now = Math.floor(Date.now() / 1000);
+
+    candleSeries.setData([
+      {
+        time: '2026-10-24',
+        open: this.stock.prevOpen,
+        high: this.stock.prevHigh,
+        low: this.stock.prevLow,
+        close: this.stock.prevClose
+      },
+      {
+        time: '2026-10-25',
+        open: this.stock.open,
+        high: this.stock.high,
+        low: this.stock.low,
+        close: this.stock.close
+      },
+    ]);
+    /*
     candleSeries.setData([
       {
         time: (now - 86400) as UTCTimestamp,
@@ -144,32 +162,58 @@ export class ChartComponent
         close: this.stock.close
       }
     ]);
+    */
+    const maxPrice = Math.max(
+      this.stock.prevHigh,
+      this.stock.high
+    );
 
+    const minPrice = Math.min(
+      this.stock.prevLow,
+      this.stock.low
+    );
+
+    const padding =
+      (maxPrice - minPrice) * 0.01;
+
+    this.chart.priceScale('right')
+      .setVisibleRange({
+        from: maxPrice - 1,
+        to: minPrice + 1
+      });
+    /*
+    this.chart.priceScale('right')
+      .setVisibleRange({
+        from: maxPrice + padding,
+        to: minPrice - padding
+      });
+     */
+
+    setTimeout(() => {
+      this.chart?.timeScale().setVisibleLogicalRange({
+        from: -8,
+        to: 9
+      });
+    }, 0);
+  /*
     setTimeout(() => {
       this.chart?.timeScale().setVisibleLogicalRange({
         from: -2,
         to: 4
       });
     }, 0);
-  /*
-    this.chart.timeScale().fitContent();
-
-    this.chart.timeScale().setVisibleLogicalRange({
-      from: -0.5,
-      to: 1.5
-    });
-
-   */
+    this.chart
+      .timeScale()
+      .fitContent();
+    */
 
     this.addCurrentPriceLine(
       candleSeries
     );
+
     this.addFibonacciLines(
       candleSeries
     );
-    this.chart
-      .timeScale()
-      .fitContent();
   }
 
   private addCurrentPriceLine(

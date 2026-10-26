@@ -1,19 +1,59 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import {
+  Component,
+  EventEmitter,
+  Output
+} from '@angular/core';
 
-import { AnalysisResult }
-  from '../../shared/models/analysis-result';
-import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from '@angular/material/card';
-import {MatButton} from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {
+  CommonModule
+} from '@angular/common';
+
+import {
+  HttpClient
+} from '@angular/common/http';
+
+import {
+  MatCard,
+  MatCardContent,
+  MatCardHeader,
+  MatCardTitle
+} from '@angular/material/card';
+
+import {
+  MatButton
+} from '@angular/material/button';
+
+import {
+  MatIconModule
+} from '@angular/material/icon';
+
+import {
+  MatDividerModule
+} from '@angular/material/divider';
+
+import {
+  MatProgressSpinnerModule
+} from '@angular/material/progress-spinner';
+
+import {
+  MatDialog
+} from '@angular/material/dialog';
+
+import {
+  AnalysisResult
+} from '../../shared/models/analysis-result';
+
+import {
+  AnalysisDialogComponent
+} from '../analysis-dialog/analysis-dialog.component';
 
 @Component({
   selector: 'app-upload',
+
   standalone: true,
-  imports: [CommonModule,
+
+  imports: [
+    CommonModule,
     MatCard,
     MatCardHeader,
     MatCardTitle,
@@ -21,22 +61,32 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatButton,
     MatIconModule,
     MatDividerModule,
-    MatProgressSpinnerModule  ],
-  templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.scss']
+    MatProgressSpinnerModule
+  ],
+
+  templateUrl:
+    './upload.component.html',
+
+  styleUrls:
+    ['./upload.component.scss']
 })
 export class UploadComponent {
+
   @Output()
   uploaded =
-    new EventEmitter<AnalysisResult[]>();
+    new EventEmitter<
+      AnalysisResult[]
+    >();
 
   @Output()
-  cleared = new EventEmitter<void>();
+  cleared =
+    new EventEmitter<void>();
 
-  // selectedFile: File | null = null;
   selectedFile?: File;
+
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private dialog: MatDialog
   ) {
   }
 
@@ -58,7 +108,6 @@ export class UploadComponent {
   }
 
   upload(): void {
-
     if (!this.selectedFile) {
       alert(
         'Bitte eine Datei auswählen.'
@@ -82,8 +131,10 @@ export class UploadComponent {
       .subscribe({
 
         next: (results) => {
-
           this.uploaded.emit(
+            results
+          );
+          this.openAnalysisDialog(
             results
           );
         },
@@ -99,8 +150,23 @@ export class UploadComponent {
       });
   }
 
+  private openAnalysisDialog(
+    results: AnalysisResult[]
+  ): void {
+
+    this.dialog.open(
+      AnalysisDialogComponent,
+      {
+        width: '95vw',
+        maxWidth: '95vw',
+        height: '95vh',
+        data: results
+      }
+    );
+  }
   reset(): void {
-    this.selectedFile = undefined;
+    this.selectedFile =
+      undefined;
     this.cleared.emit();
   }
 }

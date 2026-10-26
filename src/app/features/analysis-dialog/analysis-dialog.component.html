@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>
+  Analyseergebnisse
+</h2>
+<mat-dialog-content>
+  <app-stock-selector
+    [stocks]="results"
+    (selected)="stockSelected($event)">
+  </app-stock-selector>
+  @if (selectedStock) {
+    <div class="analysis-layout">
+      <app-signal-panel
+        [stock]="selectedStock">
+      </app-signal-panel>
+      <app-chart
+        [stock]="selectedStock">
+      </app-chart>
+    </div>
+  }
+  <app-result-table
+    [results]="results">
+  </app-result-table>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button
+    mat-button
+    mat-dialog-close>
+    Schließen
+  </button>
+</mat-dialog-actions>

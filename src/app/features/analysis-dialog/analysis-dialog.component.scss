@@ -1,0 +1,19 @@
+.analysis-layout {
+  display: grid;
+  grid-template-columns:
+      280px
+      1fr;
+  gap: 20px;
+}
+
+mat-dialog-content {
+  min-width: 1200px;
+  max-width: 95vw;
+}
+
+@media (max-width: 1200px) {
+  .analysis-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
