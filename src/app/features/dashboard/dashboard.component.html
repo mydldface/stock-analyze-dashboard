@@ -13,13 +13,20 @@
 
   <!-- Manuelle Analyse -->
   <mat-card class="dashboard-card">
+  <button mat-raised-button color="primary"
+    (click)="openManualAnalysis()">
+    Manuelle Analyse
+  </button>
+  </mat-card>
+  <!--
+  <mat-card class="dashboard-card">
     <mat-card-content>
       <app-manual-analysis
         (analyzed)="manualAnalysisFinished($event)">
       </app-manual-analysis>
     </mat-card-content>
   </mat-card>
-
+  -->
   <!-- Aktienauswahl -->
   <mat-card class="dashboard-card">
     <mat-card-header>

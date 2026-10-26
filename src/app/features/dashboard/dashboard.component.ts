@@ -24,18 +24,33 @@ import { ManualAnalysisComponent }
 
 import { MatCardModule } from '@angular/material/card';
 
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+
+import {
+  ManualAnalysisDialogComponent
+} from '../manual-analysis-dialog/manual-analysis-dialog.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {FormsModule} from '@angular/forms';
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
     CommonModule,
+    FormsModule,
     UploadComponent,
-    ManualAnalysisComponent,
+    ManualAnalysisDialogComponent,
     StockSelectorComponent,
     SignalPanelComponent,
     ChartComponent,
     ResultTableComponent,
+    MatDialogModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
@@ -45,6 +60,10 @@ export class DashboardComponent {
   results: AnalysisResult[] = [];
 
   selectedStock!: AnalysisResult;
+
+  constructor(
+    private dialog: MatDialog
+  ) {}
 
   uploadFinished(
     data: AnalysisResult[]
@@ -78,5 +97,25 @@ export class DashboardComponent {
   resetDashboard(): void {
     this.results = [];
     this.selectedStock = undefined as any;
+  }
+
+  openManualAnalysis(): void {
+    const dialogRef =
+      this.dialog.open(
+        ManualAnalysisDialogComponent,
+        {
+          width: '1200px',
+          maxWidth: '95vw'
+        }
+      );
+
+    dialogRef.afterClosed()
+      .subscribe(result => {
+        if (result) {
+          this.manualAnalysisFinished(
+            result
+          );
+        }
+      });
   }
 }

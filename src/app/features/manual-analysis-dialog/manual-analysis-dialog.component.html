@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>
+  Manuelle Analyse
+</h2>
+<mat-dialog-content>
+  <app-manual-analysis
+    (analyzed)="analysisFinished($event)">
+  </app-manual-analysis>
+  @if (result) {
+    <app-chart
+      [stock]="result">
+    </app-chart>
+  }
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button
+    mat-button
+    mat-dialog-close>
+    Abbrechen
+  </button>
+</mat-dialog-actions>
