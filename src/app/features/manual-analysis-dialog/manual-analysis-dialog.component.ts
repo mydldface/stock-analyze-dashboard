@@ -20,6 +20,9 @@ import { ManualAnalysisComponent }
 import { ChartComponent }
   from '../chart/chart.component';
 
+import { SignalPanelComponent }
+  from '../signal-panel/signal-panel.component';
+
 @Component({
   selector: 'app-manual-analysis-dialog',
 
@@ -30,6 +33,7 @@ import { ChartComponent }
     MatDialogModule,
     MatButtonModule,
     ManualAnalysisComponent,
+    SignalPanelComponent,
     ChartComponent
   ],
 

@@ -6,9 +6,14 @@
     (analyzed)="analysisFinished($event)">
   </app-manual-analysis>
   @if (result) {
-    <app-chart
-      [stock]="result">
-    </app-chart>
+    <div class="analysis-result-layout">
+      <app-signal-panel
+        [stock]="result">
+      </app-signal-panel>
+      <app-chart
+        [stock]="result">
+      </app-chart>
+    </div>
   }
 
 </mat-dialog-content>

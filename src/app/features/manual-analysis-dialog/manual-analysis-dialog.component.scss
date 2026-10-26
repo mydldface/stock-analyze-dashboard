@@ -1,0 +1,14 @@
+.analysis-result-layout {
+  display: grid;
+  grid-template-columns:
+      320px
+      1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (max-width: 1000px) {
+  .analysis-result-layout {
+    grid-template-columns: 1fr;
+  }
+}
