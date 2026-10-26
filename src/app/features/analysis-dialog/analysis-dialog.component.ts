@@ -1,6 +1,7 @@
 import {
   Component,
-  Inject
+  Inject,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -41,6 +42,7 @@ import { ResultTableComponent }
   templateUrl:
     './analysis-dialog.component.html',
 
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls:
     ['./analysis-dialog.component.scss']
 })

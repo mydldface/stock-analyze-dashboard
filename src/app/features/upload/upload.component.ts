@@ -1,7 +1,8 @@
 import {
   Component,
   EventEmitter,
-  Output
+  Output,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 
@@ -64,6 +65,7 @@ import {
   templateUrl:
     './upload.component.html',
 
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls:
     ['./upload.component.scss']
 })

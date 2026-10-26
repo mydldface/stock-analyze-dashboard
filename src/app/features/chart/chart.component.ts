@@ -5,7 +5,8 @@ import {
   Input,
   OnChanges,
   SimpleChanges,
-  ViewChild
+  ViewChild,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import {
@@ -29,6 +30,7 @@ import {MatCardModule} from '@angular/material/card';
     MatCardModule
 ],
   templateUrl: './chart.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./chart.component.scss']
 })
 export class ChartComponent

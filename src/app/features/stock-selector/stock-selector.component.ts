@@ -2,7 +2,8 @@ import {
   Component,
   EventEmitter,
   Input,
-  Output
+  Output,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import { AnalysisResult }
@@ -22,6 +23,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule
 ],
   templateUrl: './stock-selector.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./stock-selector.component.scss']
 })
 export class StockSelectorComponent {

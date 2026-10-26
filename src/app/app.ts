@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 @Component({
@@ -8,6 +8,7 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
     DashboardComponent
   ],
   templateUrl: './app.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss'
 })
 export class App {

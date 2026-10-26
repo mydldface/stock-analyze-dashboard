@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import {
   MatDialogModule,
@@ -38,6 +38,7 @@ import { SignalPanelComponent }
   templateUrl:
     './manual-analysis-dialog.component.html',
 
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls:
     ['./manual-analysis-dialog.component.scss']
 })

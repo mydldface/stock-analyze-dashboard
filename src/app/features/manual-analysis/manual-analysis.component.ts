@@ -1,7 +1,8 @@
 import {
   Component,
   EventEmitter,
-  Output
+  Output,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
@@ -30,6 +31,7 @@ import { StockService }
     MatButtonModule
 ],
   templateUrl: './manual-analysis.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./manual-analysis.component.scss']
 })
 export class ManualAnalysisComponent {

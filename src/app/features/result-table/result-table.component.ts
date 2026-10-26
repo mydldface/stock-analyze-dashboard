@@ -1,7 +1,7 @@
 import { AnalysisResult } from '../../shared/models/analysis-result';
 
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatTableModule } from '@angular/material/table';
@@ -17,6 +17,7 @@ import { MatTableModule } from '@angular/material/table';
     MatChipsModule
   ],
   templateUrl: './result-table.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./result-table.component.scss']
 })
 export class ResultTableComponent {
