@@ -8,8 +8,7 @@ import {
 import { MatButtonModule }
   from '@angular/material/button';
 
-import { CommonModule }
-  from '@angular/common';
+
 
 import { AnalysisResult }
   from '../../shared/models/analysis-result';
@@ -29,13 +28,12 @@ import { SignalPanelComponent }
   standalone: true,
 
   imports: [
-    CommonModule,
     MatDialogModule,
     MatButtonModule,
     ManualAnalysisComponent,
     SignalPanelComponent,
     ChartComponent
-  ],
+],
 
   templateUrl:
     './manual-analysis-dialog.component.html',

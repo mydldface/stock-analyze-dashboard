@@ -4,9 +4,7 @@ import {
   Output
 } from '@angular/core';
 
-import {
-  CommonModule
-} from '@angular/common';
+
 
 import {
   HttpClient
@@ -53,7 +51,6 @@ import {
   standalone: true,
 
   imports: [
-    CommonModule,
     MatCard,
     MatCardHeader,
     MatCardTitle,
@@ -62,7 +59,7 @@ import {
     MatIconModule,
     MatDividerModule,
     MatProgressSpinnerModule
-  ],
+],
 
   templateUrl:
     './upload.component.html',

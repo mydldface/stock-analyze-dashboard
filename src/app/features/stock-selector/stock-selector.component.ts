@@ -11,17 +11,16 @@ import { AnalysisResult }
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import {CommonModule} from '@angular/common';
+
 
 @Component({
   selector: 'app-stock-selector',
   standalone: true,
   imports: [
-    CommonModule,
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule
-  ],
+],
   templateUrl: './stock-selector.component.html',
   styleUrls: ['./stock-selector.component.scss']
 })

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 import { AnalysisResult }
   from '../../shared/models/analysis-result';
@@ -38,7 +38,6 @@ import {FormsModule} from '@angular/forms';
   selector: 'app-dashboard',
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
     UploadComponent,
     ManualAnalysisDialogComponent,
@@ -51,7 +50,7 @@ import {FormsModule} from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule
-  ],
+],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })

@@ -20,15 +20,14 @@ import {
 import { AnalysisResult }
   from '../../shared/models/analysis-result';
 import {MatCardModule} from '@angular/material/card';
-import {CommonModule} from '@angular/common';
+
 
 @Component({
   selector: 'app-chart',
   standalone: true,
   imports: [
-    CommonModule,
     MatCardModule
-  ],
+],
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss']
 })

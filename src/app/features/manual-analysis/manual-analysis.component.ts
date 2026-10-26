@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
-import {CommonModule} from '@angular/common';
+
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -23,13 +23,12 @@ import { StockService }
   selector: 'app-manual-analysis',
   standalone: true,
   imports: [
-    CommonModule,
     FormsModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule
-  ],
+],
   templateUrl: './manual-analysis.component.html',
   styleUrls: ['./manual-analysis.component.scss']
 })
